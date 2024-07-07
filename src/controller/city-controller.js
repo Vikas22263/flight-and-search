@@ -55,9 +55,9 @@ const update = async (req, res) => {
   }
 };
 
-module.exports = {
+module.exports.Citycontrollers = {
   create,
   update,
-  getcity,
+  getcity, 
   destroy,
 };
