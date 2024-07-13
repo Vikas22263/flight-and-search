@@ -54,10 +54,19 @@ const update = async (req, res) => {
     throw { error };
   }
 };
-
+const getAllcity=async(req,res)=>{
+try {
+  const getallcities=await Cityservice.getAllcities(req.params)
+  return getallcities
+} catch (error) {
+  console.log(error);
+  throw { error };
+}
+}
 module.exports.Citycontrollers = {
   create,
   update,
   getcity, 
   destroy,
+  getAllcity
 };
