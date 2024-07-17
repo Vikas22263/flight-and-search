@@ -5,6 +5,8 @@ class FlightService {
     this.airplanerepository = new AirplaneRepository();
     this.flightRepository = new FlightRepository();
   }
+
+  
   async createFlight(data) {
     try {
       if (compareTime(data.arrivalTime.data.deapartureTime)) {
