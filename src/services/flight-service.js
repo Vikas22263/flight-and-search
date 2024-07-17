@@ -6,7 +6,6 @@ class FlightService {
     this.flightRepository = new FlightRepository();
   }
 
-  
   async createFlight(data) {
     try {
       if (compareTime(data.arrivalTime.data.deapartureTime)) {
@@ -22,6 +21,25 @@ class FlightService {
       return createFlight;
     } catch (error) {
       console.log("error in flilght service");
+    }
+  }
+
+  async getFight(id) {
+    try {
+      const flight = this.flightRepository.getFlight(id);
+      return flight;
+    } catch (error) {
+      console.log("error in flilght service");
+      throw { error };
+    }
+  }
+  async getAllfight(data) {
+    try {
+      const allflight = this.flightRepository.getAllFlight(data);
+      return allflight;
+    } catch (error) {
+      console.log("error in flilght service");
+      throw { error };
     }
   }
 }
